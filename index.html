@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prof. Dr. Med. Mahmoud Abu Khater — Neurosurgeon & Pain Therapist. Advanced neurosurgery, spine care, and pain therapy with German medical expertise." />
+  <title>Prof. Dr. Med. Mahmoud Abu Khater | Neurosurgery</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.png" type="image/x-icon">
+  
+</head>
+<body>
+  <div class="intro" id="intro">
+    <canvas id="introCanvas" aria-hidden="true"></canvas>
+    <div class="intro__backdrop"></div>
+
+    <div class="intro__content">
+      <div class="intro__emblem" aria-hidden="true">
+        <span class="intro-ring intro-ring--one"></span>
+        <span class="intro-ring intro-ring--two"></span>
+        <span class="intro-scan"></span>
+        <svg viewBox="0 0 220 220">
+          <path d="M110 110 C82 92, 65 66, 52 35" />
+          <path d="M110 110 C140 91, 158 66, 172 35" />
+          <path d="M110 110 C81 121, 55 145, 34 180" />
+          <path d="M110 110 C141 122, 166 146, 188 180" />
+          <path d="M110 110 C103 80, 103 52, 110 24" />
+          <path d="M110 110 C118 140, 118 168, 110 196" />
+          <circle cx="110" cy="110" r="12" />
+          <circle cx="52" cy="35" r="5" />
+          <circle cx="172" cy="35" r="5" />
+          <circle cx="34" cy="180" r="5" />
+          <circle cx="188" cy="180" r="5" />
+          <circle cx="110" cy="24" r="5" />
+          <circle cx="110" cy="196" r="5" />
+        </svg>
+      </div>
+
+      <p class="eyebrow">Advanced Neurosurgical Excellence</p>
+      <h1>Prof. Dr. Med.<br>Mahmoud Abu Khater</h1>
+      <p>Neurosurgeon & Pain Therapist</p>
+      <div class="intro-progress" aria-hidden="true"><span></span></div>
+      <button class="skip-intro" id="skipIntro" type="button">Enter Website</button>
+    </div>
+  </div>
+
+  <canvas class="neural-canvas" id="neuralCanvas" aria-hidden="true"></canvas>
+
+  <aside class="sidebar">
+    <a class="brand" href="#home" aria-label="Home">
+      <div class="brand__mark">
+        <img src="assets/logo.png" alt="Prof. Mahmoud Abu Khater Logo">
+      </div>
+      <div>
+        <span>Prof. Dr. Med.</span>
+        <strong>Mahmoud<br>Abu Khater</strong>
+        <small>Neurosurgeon & Pain Therapist</small>
+      </div>
+    </a>
+
+    <nav class="side-nav" aria-label="Sidebar navigation">
+      <a class="active" href="#home"><span>⌂</span>Home</a>
+      <a href="#about"><span>○</span>About Me</a>
+      <a href="#services"><span>✧</span>Services</a>
+      <a href="#experience"><span>□</span>Experience</a>
+      <a href="#patients"><span>◇</span>Patients</a>
+      <a href="#education"><span>⬡</span>Education</a>
+      <a href="#contact"><span>◎</span>Contact</a>
+    </nav>
+
+    <div class="urgent-card">
+      <p>Need urgent help?</p>
+      <small>We are here for you</small>
+      <a class="whatsapp-button" href="https://wa.me/4917645122026" target="_blank" rel="noreferrer">WhatsApp Chat</a>
+    </div>
+
+    <div class="sidebar__bottom">
+      <button class="pill-button" id="langBtn" type="button">EN</button>
+      <button class="pill-button" id="themeBtn" type="button" aria-label="Toggle visual mode">◐</button>
+    </div>
+  </aside>
+
+  <main class="page-shell">
+    <header class="topbar">
+      <button class="menu-button" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#patients">Patients</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="topbar__actions">
+        <a class="primary-btn" href="#contact">Book Appointment</a>
+        <button class="select-btn" type="button">EN⌄</button>
+      </div>
+    </header>
+
+    <section class="hero hero--image" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero__content reveal">
+        <p class="eyebrow">Expert Care. Advanced Solutions.</p>
+        <h1>Precision in<br><span>Neurosurgery</span></h1>
+        <p class="hero__lead">Combining advanced German medical expertise with compassionate care for better neurological outcomes.</p>
+
+        <div class="stats-grid" aria-label="Key highlights">
+          <div><strong>20+</strong><span>Years of Experience</span></div>
+          <div><strong>5000+</strong><span>Successful Surgeries</span></div>
+          <div><strong>30+</strong><span>International Courses</span></div>
+          <div><strong>15+</strong><span>Countries Visited</span></div>
+        </div>
+
+        <div class="hero__actions">
+          <a class="primary-btn primary-btn--large" href="#contact">Book Appointment</a>
+          <a class="ghost-btn" href="#services">View Services <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="hero__visual reveal" aria-label="Doctor portrait and medical visual">
+        <div class="brain-orb" aria-hidden="true">
+          <div class="brain-line one"></div>
+          <div class="brain-line two"></div>
+          <div class="brain-line three"></div>
+        </div>
+        <div class="doctor-card">
+          <img src="assets/doctor-hero-portrait.webp" alt="Prof. Dr. Med. Mahmoud Abu Khater" />
+        </div>
+        <button class="play-intro" type="button" id="playIntro"><span>▶</span><b>Watch Intro</b><small>1:32 Min</small></button>
+      </div>
+    </section>
+
+    <section class="panel section" id="services">
+      <div class="section__head">
+        <div>
+          <p class="section-kicker">My Services</p>
+          <h2>Advanced care for brain, spine and nervous system</h2>
+        </div>
+        <a class="ghost-btn ghost-btn--small" href="#contact">View All Services <span>→</span></a>
+      </div>
+
+      <div class="services-grid services-grid--images">
+        <article class="service-card service-card--image reveal">
+          <figure class="service-media">
+            <img src="assets/Holographic-neural-network-projection.png" alt="Brain Surgery visual">
+          </figure>
+          <h3>Brain Surgery</h3>
+          <p>Treatment of brain tumors, aneurysms, vascular disorders and complex neurological conditions.</p>
+          <a href="#contact" aria-label="Read more about brain surgery">→</a>
+        </article>
+
+        <article class="service-card service-card--image reveal">
+          <figure class="service-media">
+            <img src="assets/Futuristic-spinal-diagnostics-interface.png" alt="Spine Surgery visual">
+          </figure>
+          <h3>Spine Surgery</h3>
+          <p>Minimally invasive spine surgery for disc problems, deformities and spinal instability.</p>
+          <a href="#contact" aria-label="Read more about spine surgery">→</a>
+        </article>
+
+        <article class="service-card service-card--image reveal">
+          <figure class="service-media">
+            <img src="assets/neural-network.png" alt="Pain Therapy visual">
+          </figure>
+          <h3>Pain Therapy</h3>
+          <p>Comprehensive care for chronic pain conditions and neuropathic pain.</p>
+          <a href="#contact" aria-label="Read more about pain therapy">→</a>
+        </article>
+
+        <article class="service-card service-card--image reveal">
+          <figure class="service-media">
+            <img src="assets/Futuristic-spine-with-neuromodulation-device.png" alt="Spinal Cord Stimulation visual">
+          </figure>
+          <h3>Spinal Cord Stimulation</h3>
+          <p>Advanced neuromodulation techniques for chronic pain relief.</p>
+          <a href="#contact" aria-label="Read more about spinal cord stimulation">→</a>
+        </article>
+
+        <article class="service-card service-card--image reveal">
+          <figure class="service-media">
+            <img src="assets/peripheral-nerve.png" alt="Peripheral Nerve Stimulation visual">
+          </figure>
+          <h3>Peripheral Nerve Stimulation</h3>
+          <p>Innovative solutions for peripheral nerve pain and dysfunction.</p>
+          <a href="#contact" aria-label="Read more about peripheral nerve stimulation">→</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel section journey" id="experience">
+      <div class="section__head">
+        <div>
+          <p class="section-kicker">My Professional Journey</p>
+          <h2>A path dedicated to innovation and excellence</h2>
+        </div>
+        <div class="slider-controls">
+          <button type="button" id="timelinePrev">←</button>
+          <button type="button" id="timelineNext">→</button>
+        </div>
+      </div>
+
+      <div class="timeline" id="timelineTrack">
+        <article class="timeline-card">
+          <span>2000 - 2006</span>
+          <h3>Medical Study</h3>
+          <p>Leipzig University<br>Germany</p>
+        </article>
+        <article class="timeline-card">
+          <span>2006 - 2012</span>
+          <h3>Residency</h3>
+          <p>Neurosurgery<br>Germany</p>
+        </article>
+        <article class="timeline-card">
+          <span>2012 - 2018</span>
+          <h3>Head of Department</h3>
+          <p>European Hospital<br>Palestine</p>
+        </article>
+        <article class="timeline-card">
+          <span>2018 - Now</span>
+          <h3>International Presence</h3>
+          <p>Conferences & Courses<br>Worldwide</p>
+        </article>
+        <article class="timeline-card timeline-card--image">
+          <span>2023</span>
+          <h3>NATO Meeting</h3>
+          <p>Brussels, Belgium</p>
+          <img src="assets/doctor-nato-archive-portrait.webp" alt="Archive photo from NATO meeting" />
+        </article>
+      </div>
+    </section>
+
+    <section class="panel international section" id="about">
+      <div class="international__copy reveal">
+        <p class="section-kicker">International Presence</p>
+        <h2>Working across borders to deliver world-class care</h2>
+        <p>Professional experience connected to Germany, Palestine, Belgium and international medical courses in neurosurgery and pain therapy.</p>
+        <a class="ghost-btn ghost-btn--small" href="#experience">Explore Map <span>→</span></a>
+      </div>
+
+      <div class="map-card map-card--image reveal" aria-label="International medical presence map">
+        <img src="assets/world-map.png" alt="International medical presence map">
+      </div>
+
+      <div class="country-list reveal">
+        <div><span>🇩🇪</span><strong>Germany</strong><small>Leipzig, Düsseldorf</small></div>
+        <div><span>🇵🇸</span><strong>Palestine</strong><small>European Hospital, Shifa Medical Complex</small></div>
+        <div><span>🇧🇪</span><strong>Belgium</strong><small>Brussels — NATO</small></div>
+        <div><span>🌍</span><strong>International</strong><small>Conferences & courses</small></div>
+      </div>
+    </section>
+
+    <section class="split-section section" id="patients">
+      <div class="panel testimonials reveal">
+        <p class="section-kicker">What My Patients Say</p>
+        <div class="quote-mark">“</div>
+        <div class="testimonial-track" id="testimonialTrack">
+          <article class="testimonial active">
+            <p>Professor Abu Khater changed my life. After years of pain, I am now able to live normally.</p>
+            <strong>Ahmad K.</strong><span>Palestine</span>
+          </article>
+          <article class="testimonial">
+            <p>Highly professional, kind and truly one of the best doctors I have ever met.</p>
+            <strong>M. S.</strong><span>Germany</span>
+          </article>
+          <article class="testimonial">
+            <p>The surgery was a success and the care I received was beyond excellent.</p>
+            <strong>Omar A.</strong><span>Jordan</span>
+          </article>
+        </div>
+        <div class="dots" id="testimonialDots"></div>
+      </div>
+
+      <div class="panel appointment reveal" id="contact">
+        <p class="section-kicker">Book Appointment</p>
+        <h2>We are here to help</h2>
+        <ul class="contact-list">
+          <li>☎ <a href="tel:+4917645122026">+49 176 45122026</a></li>
+          <li>✉ <a href="mailto:info@mahmoudabukhater.com">info@mahmoudabukhater.com</a></li>
+          <li>⌖ Düsseldorf, Germany</li>
+        </ul>
+
+        <form class="booking-form" id="bookingForm">
+          <label>
+            <span>Full Name</span>
+            <input type="text" name="name" placeholder="Full Name" required>
+          </label>
+          <label>
+            <span>Phone Number</span>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+          </label>
+          <label>
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="Email Address">
+          </label>
+          <label>
+            <span>Select Service</span>
+            <select name="service" required>
+              <option value="">Select Service</option>
+              <option>Brain Surgery Consultation</option>
+              <option>Spine Surgery Consultation</option>
+              <option>Pain Therapy</option>
+              <option>Spinal Cord Stimulation</option>
+            </select>
+          </label>
+          <label>
+            <span>Preferred Date</span>
+            <input type="date" name="date">
+          </label>
+          <label>
+            <span>Preferred Time</span>
+            <input type="time" name="time">
+          </label>
+          <label class="form-wide">
+            <span>Message</span>
+            <textarea name="message" placeholder="Message (optional)"></textarea>
+          </label>
+          <button class="primary-btn form-wide" type="submit">Send Request</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="panel section education" id="education">
+      <div>
+        <p class="section-kicker">Education & Events</p>
+        <h2>Continuous learning. Worldwide impact.</h2>
+      </div>
+      <div class="education-grid">
+        <article><strong>UNIVERSITÄT LEIPZIG</strong><span>German academic background</span></article>
+        <article><strong>Düsseldorf — Germany</strong><span>Spinal Cord Stimulation Course</span></article>
+        <article><strong>Peripheral Nerve Stimulation</strong><span>International Course</span></article>
+        <article><strong>Brussels — NATO</strong><span>International professional presence</span></article>
+      </div>
+    </section>
+
+    <footer class="footer panel">
+      <div class="footer-brand">
+        <div class="brand__mark">
+          <img src="assets/logo.png" alt="Prof. Mahmoud Abu Khater Logo">
+        </div>
+        <h3>Prof. Dr. Med.<br>Mahmoud Abu Khater</h3>
+        <p>Neurosurgeon & Pain Therapist<br>Neurochirurg und Schmerztherapeut mit Herz und Seele</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a><a href="#about">About Me</a><a href="#services">Services</a><a href="#experience">Experience</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Brain Surgery</a><a href="#services">Spine Surgery</a><a href="#services">Pain Therapy</a><a href="#services">Nerve Stimulation</a>
+      </div>
+      <div>
+        <h4>Contact Info</h4>
+        <a href="tel:+4917645122026">+49 176 45122026</a>
+        <a href="mailto:info@mahmoudabukhater.com">info@mahmoudabukhater.com</a>
+        <a href="https://wa.me/4917645122026" target="_blank" rel="noreferrer">WhatsApp Chat</a>
+      </div>
+      <div>
+        <h4>Working Hours</h4>
+        <p>Mon - Fri: 08:00 - 18:00</p>
+        <p>Saturday: 09:00 - 14:00</p>
+        <p>Sunday: Closed</p>
+      </div>
+    </footer>
+  </main>
+
+  <a class="mobile-whatsapp" href="https://wa.me/4917645122026" target="_blank" rel="noreferrer">WhatsApp</a>
+  <script src="script.js"></script>
+</body>
+</html>
