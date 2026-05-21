@@ -10,10 +10,61 @@ const timelineTrack = $('#timelineTrack');
 const prevBtn = $('#timelinePrev');
 const nextBtn = $('#timelineNext');
 
+const dateInput = $('input[name="date"]');
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.setAttribute('min', today);
+}
+
+const timeSlots = [
+  '08:00', '09:00', '10:00', '11:00', '12:00',
+  '14:00', '15:00', '16:00', '17:00', '18:00'
+];
+
+function getDayName(dateStr) {
+  const d = new Date(dateStr + 'T00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'long' });
+}
+
+function generateTimeSlots(dateStr) {
+  const timeSlotDiv = $('#timeSlots');
+  const dayName = getDayName(dateStr);
+  const isSaturday = new Date(dateStr + 'T00:00').getDay() === 6;
+  const isSunday = new Date(dateStr + 'T00:00').getDay() === 0;
+
+  if (isSunday) {
+    timeSlotDiv.innerHTML = '<small>❌ Closed on Sundays</small>';
+    return;
+  }
+
+  const availableSlots = isSaturday
+    ? timeSlots.filter(t => t <= '14:00')
+    : timeSlots;
+
+  timeSlotDiv.innerHTML = availableSlots.map(slot =>
+    `<button type="button" class="time-slot" data-time="${slot}">${slot}</button>`
+  ).join('');
+
+  $$('.time-slot').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      $$('.time-slot').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      $('#timeInput').value = btn.dataset.time;
+    });
+  });
+}
+
 function hideIntro() {
   intro?.classList.add('hidden');
-  
+
 }
+
+dateInput?.addEventListener('change', (e) => {
+  if (e.target.value) {
+    generateTimeSlots(e.target.value);
+  }
+});
 
 window.addEventListener('load', () => {
   setTimeout(hideIntro, 6000);
@@ -80,10 +131,50 @@ $('#bookingForm')?.addEventListener('submit', (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const data = Object.fromEntries(new FormData(form).entries());
+
+  if (data.date) {
+    const selected = new Date(data.date);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (selected < today) {
+      alert('❌ Please select a date in the future');
+      return;
+    }
+  }
+
+  if (!data.time) {
+    alert('⏰ Please select a time');
+    return;
+  }
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return '—';
+    const d = new Date(dateStr + 'T00:00');
+    return d.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+  };
+
+  const formatTime = (timeStr) => {
+    if (!timeStr) return '—';
+    const [h, m] = timeStr.split(':');
+    const time = new Date();
+    time.setHours(parseInt(h), parseInt(m));
+    return time.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+  };
+
   const message = encodeURIComponent(
-    `Appointment Request%0A%0AName: ${data.name}%0APhone: ${data.phone}%0AEmail: ${data.email || '-'}%0AService: ${data.service}%0ADate: ${data.date || '-'}%0ATime: ${data.time || '-'}%0AMessage: ${data.message || '-'}`
+    `📋 *APPOINTMENT REQUEST*\n\n` +
+    `👤 *Name:* ${data.name}\n` +
+    `📞 *Phone:* ${data.phone}\n` +
+    `📧 *Email:* ${data.email || '—'}\n` +
+    `🏥 *Service:* ${data.service}\n` +
+    `📅 *Date:* ${formatDate(data.date)}\n` +
+    `⏰ *Time:* ${formatTime(data.time)}\n` +
+    `💬 *Message:* ${data.message || '—'}`
   );
   window.open(`https://wa.me/4917645122026?text=${message}`, '_blank', 'noopener,noreferrer');
+  form.reset();
+  $('#timeSlots').innerHTML = '<small>Select a date first</small>';
+  $('#timeInput').value = '';
 });
 
 function createNeuralCanvas(canvasId, particleCount = 75, speed = 0.22) {

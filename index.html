@@ -333,11 +333,14 @@
           </label>
           <label>
             <span>Preferred Date</span>
-            <input type="date" name="date">
+            <input type="date" name="date" required min="">
           </label>
           <label>
             <span>Preferred Time</span>
-            <input type="time" name="time">
+            <div class="time-slots" id="timeSlots">
+              <small>Select a date first</small>
+            </div>
+            <input type="hidden" name="time" id="timeInput">
           </label>
           <label class="form-wide">
             <span>Message</span>

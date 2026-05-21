@@ -495,6 +495,43 @@ h2 { margin: 0; color: var(--silver); font-size: .95rem; font-weight: 400; line-
 .booking-form input:focus, .booking-form select:focus, .booking-form textarea:focus { border-color: var(--border-strong); box-shadow: 0 0 0 4px rgba(47,125,255,.14); }
 .form-wide { grid-column: 1/-1; }
 
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 8px;
+  min-height: 46px;
+}
+
+.time-slot {
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 8px;
+  background: rgba(1, 8, 19, .72);
+  color: var(--text);
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.time-slot:hover {
+  border-color: var(--border-strong);
+  background: rgba(47,125,255,.12);
+}
+
+.time-slot.selected {
+  background: var(--blue);
+  border-color: var(--blue);
+  font-weight: 500;
+}
+
+.time-slots small {
+  grid-column: 1/-1;
+  color: var(--muted);
+  text-align: center;
+  padding: 12px 0;
+}
+
 .education { display: grid; grid-template-columns: .75fr 1.25fr; gap: 22px; align-items: center; }
 .education-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .education-grid article { padding: 18px; border-radius: 14px; border: 1px solid var(--border); background: rgba(255,255,255,.03); }
