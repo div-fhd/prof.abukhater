@@ -355,6 +355,13 @@ button, input, textarea, select { font: inherit; }
   opacity: .78;
   animation: slowFloat 5.5s ease-in-out infinite;
 }
+
+@media (max-width: 1024px) {
+  .brain-orb {
+    width: min(350px, 65vw);
+    top: 24px;
+  }
+}
 .brain-line { position: absolute; inset: 20%; border: 1px solid rgba(70,213,255,.45); border-radius: 44% 56% 50% 48%; }
 .brain-line.one { transform: rotate(22deg); }
 .brain-line.two { transform: rotate(90deg); inset: 28%; }
@@ -415,6 +422,19 @@ h2 { margin: 0; color: var(--silver); font-size: .95rem; font-weight: 400; line-
 .service-icon.nerve::after { inset: 45% 6%; border-radius: 999px; transform: rotate(-18deg); }
 
 .timeline { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(195px, 1fr); gap: 18px; overflow-x: auto; padding-bottom: 18px; scroll-snap-type: x mandatory; }
+
+@media (max-width: 1024px) {
+  .timeline {
+    grid-auto-columns: minmax(160px, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    grid-auto-columns: 85%;
+  }
+}
 .timeline::-webkit-scrollbar { height: 6px; }
 .timeline::-webkit-scrollbar-thumb { background: rgba(77,154,255,.65); border-radius: 999px; }
 .timeline-card {
@@ -565,7 +585,12 @@ body.light-mode .topbar { background: rgba(255,255,255,.78); }
 
 @media (max-width: 1180px) {
   :root { --sidebar: 0px; }
-  .sidebar { transform: translateX(calc(-100% - 24px)); transition: transform .3s ease; }
+  .sidebar {
+    width: min(280px, calc(100vw - 24px)); /* real width so -100% hides it fully */
+    transform: translateX(calc(-100% - 24px));
+    transition: transform .3s ease;
+    overflow-y: auto;
+  }
   .page-shell { width: 100%; margin-left: 0; padding-inline: 14px; }
   .menu-button { display: inline-flex; align-items: center; justify-content: center; }
   .top-nav { display: none; }
@@ -591,6 +616,85 @@ body.light-mode .topbar { background: rgba(255,255,255,.78); }
   .footer { grid-template-columns: 1fr; }
   .mobile-whatsapp { display: inline-flex; }
 }
+
+/* iPad Specific Fixes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .page-shell {
+    width: 100%;
+    margin-left: 0;
+    padding-inline: 16px;
+  }
+  .sidebar {
+    display: none;
+    width: min(280px, 85vw);
+  }
+  body.sidebar-open .sidebar {
+    display: flex;
+    position: fixed;
+    inset: 10px auto 10px 10px;
+    z-index: 999;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 24px 16px;
+  }
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+  .hero__visual {
+    min-height: 400px;
+    margin-top: 24px;
+  }
+  .doctor-card {
+    width: min(320px, 85vw);
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+  .stats-grid div {
+    padding-right: 12px;
+  }
+  .services-grid--images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  .international {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .split-section {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .booking-form {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .section {
+    padding: 20px;
+  }
+  .topbar {
+    padding: 0 12px;
+  }
+  .top-nav {
+    gap: 20px;
+  }
+  .top-nav a {
+    font-size: 0.7rem;
+  }
+  .education {
+    grid-template-columns: 1fr;
+  }
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
 @media (max-width: 520px) {
   .hero__actions { flex-direction: column; align-items: stretch; }
   .section__head { flex-direction: column; }
@@ -905,20 +1009,17 @@ body {
   height: 48px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1024px) {
   .services-grid--images {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .service-card--image { min-height: 300px; }
+  .service-card--image {
+    min-height: 280px;
+  }
 }
 
-@media (max-width: 760px) {
-  .services-grid--images { grid-template-columns: 1fr; }
-  .hero-bg {
-    background:
-      linear-gradient(180deg, rgba(2,8,23,.82), rgba(2,8,23,.96)),
-      url("assets/neurosurgery-clinic-hero.png") center / cover no-repeat;
+@media (max-width: 820px) {
+  .services-grid--images {
+    grid-template-columns: 1fr;
   }
-  .hero__visual { min-height: 450px; }
-  .doctor-card { width: min(340px, 90vw); }
 }
