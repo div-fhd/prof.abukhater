@@ -55,6 +55,7 @@ button, input, textarea, select { font: inherit; }
   transition: opacity .9s ease, visibility .9s ease;
 }
 .intro.hidden { opacity: 0; visibility: hidden; }
+body.intro-active { overflow: hidden; }
 .intro__content { position: relative; text-align: center; padding: 24px; }
 .intro__content h1 {
   margin: 8px 0 12px;
@@ -1022,4 +1023,4 @@ body {
   .services-grid--images {
     grid-template-columns: 1fr;
   }
-}
+} 

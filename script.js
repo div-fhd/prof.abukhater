@@ -57,7 +57,7 @@ function generateTimeSlots(dateStr) {
 
 function hideIntro() {
   intro?.classList.add('hidden');
-
+  document.body.classList.remove('intro-active');
 }
 
 dateInput?.addEventListener('change', (e) => {
@@ -73,6 +73,7 @@ skipIntro?.addEventListener('click', hideIntro);
 playIntro?.addEventListener('click', () => {
   if (!document.body.contains(intro)) return;
   intro.classList.remove('hidden');
+  document.body.classList.add('intro-active');
   setTimeout(hideIntro, 6000);
 });
 
