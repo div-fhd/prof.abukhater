@@ -727,7 +727,7 @@ body {
   inset: 0;
   background:
     linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.28), rgba(0,0,0,.86)),
-    url("assets/neurosurgery-clinic-hero.png") center / cover no-repeat;
+    url("assets/neurosurgery-clinic-hero.webp") center / cover no-repeat;
   opacity: .42;
   filter: blur(1px) saturate(.95) contrast(1.08);
 }
@@ -862,7 +862,7 @@ body {
   background:
     linear-gradient(90deg, rgba(2,8,23,.96) 0%, rgba(2,8,23,.72) 40%, rgba(2,8,23,.30) 100%),
     linear-gradient(180deg, rgba(2,8,23,.10), rgba(2,8,23,.92)),
-    url("assets/neurosurgery-clinic-hero.png") center right / cover no-repeat;
+    url("assets/neurosurgery-clinic-hero.webp") center right / cover no-repeat;
   opacity: .92;
   z-index: -2;
 }
@@ -913,7 +913,7 @@ body {
   background:
     radial-gradient(circle at 50% 48%, rgba(70,213,255,.55), transparent 4%),
     radial-gradient(circle at 50% 48%, rgba(47,125,255,.20), transparent 36%),
-    url("assets/Holographic-neural-network-projection.png") center / cover no-repeat;
+    url("assets/Holographic-neural-network-projection.webp") center / cover no-repeat;
   opacity: .44;
   mix-blend-mode: screen;
 }
@@ -1023,4 +1023,4 @@ body {
   .services-grid--images {
     grid-template-columns: 1fr;
   }
-} 
+}
