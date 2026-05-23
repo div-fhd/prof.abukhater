@@ -66,9 +66,9 @@ dateInput?.addEventListener('change', (e) => {
   }
 });
 
-window.addEventListener('load', () => {
-  setTimeout(hideIntro, 6000);
-});
+// Hide intro on a fixed timer — NOT tied to window 'load' (which waits for ALL
+// images to finish and badly delays LCP). Adjust 3000 to taste.
+setTimeout(hideIntro, 3000);
 skipIntro?.addEventListener('click', hideIntro);
 playIntro?.addEventListener('click', () => {
   if (!document.body.contains(intro)) return;
